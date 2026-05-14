@@ -31,7 +31,6 @@ export default function Carousel() {
           <div key={slide.id} style={{ minWidth: '100%', background: slide.bg, color: slide.textColor, padding: '60px 40px', height: '400px', boxSizing: 'border-box' }}>
             <h2 style={{ fontSize: '40px', fontWeight: 'bold' }}>{slide.title}</h2>
             <p>{slide.description}</p>
-            <p>{slide.price}</p>
           </div>
         ))}
       </div>
