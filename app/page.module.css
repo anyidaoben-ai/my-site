@@ -1,0 +1,72 @@
+/* page.module.css */
+@keyframes rainbow {
+  0%   { color: #ff6b6b; }
+  20%  { color: #ffa94d; }
+  40%  { color: #ffe066; }
+  60%  { color: #69db7c; }
+  80%  { color: #74c0fc; }
+  100% { color: #ff6b6b; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(-2deg); }
+  50%       { transform: translateY(-12px) rotate(2deg); }
+}
+
+@keyframes glow {
+  0%, 100% { text-shadow: 0 0 20px #ff6b6b88, 0 0 40px #ffa94d44; }
+  50%       { text-shadow: 0 0 30px #74c0fc88, 0 0 60px #69db7c44; }
+}
+
+.title {
+  font-size: 64px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  display: inline-block; /* ← アニメーションに必要！ */
+  animation:
+    rainbow 3s linear infinite,   /* 🌈 虹色に変化 */
+    float   3s ease-in-out infinite, /* 🪄 ふわふわ浮く */
+    glow    3s ease-in-out infinite; /* ✨ 光る */
+}
+
+.subtitle {
+  font-size: 1.9rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: #1dba8a;
+  animation: popIn 2.8s ease-in-out infinite, 
+             colorShift 2.8s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+@keyframes popIn {
+  0%, 100% { transform: scaleY(1)    skewX(0deg);  }
+  10%       { transform: scaleY(1.08) skewX(-1deg); }
+  20%       { transform: scaleY(0.96) skewX(1deg);  }
+  30%       { transform: scaleY(1)    skewX(0deg);  }
+}
+
+@keyframes colorShift {
+  0%, 100% { color: #1dba8a; } /* エメラルド */
+  50%       { color: #e05a9a; } /* コーラル */
+}
+
+.videoList {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;          /* セクション間のスペース */
+  padding: 2rem;
+}
+
+.videoItem {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;          /* h2 と video の間のスペース */
+}
+
+.videoItem video {
+  border-radius: 12px; /* 角を丸くして見やすく */
+}
+
+
+

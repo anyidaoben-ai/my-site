@@ -1,0 +1,145 @@
+.headtag {
+  list-style: none;
+  display: flex;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+/* ─── 変更点を追記した .navLink ─── */
+.navLink {
+  display: inline-block;
+  padding: 10px 28px;        /* 少し広げて内線のスペースを確保 */
+  border: 1px solid #b8986a; /* 外枠ライン */
+  color: #b8986a;
+  text-decoration: none;
+  letter-spacing: 0.15em;
+  font-size: 0.85rem;
+  font-weight: 300;           /* 細めにすると上品さが増す */
+  background-color: transparent;
+  transition: all 0.4s ease;
+  border-radius: 0;           /* ←★ 角を完全に四角に */
+  position: relative;         /* ←★ 疑似要素の基準点 */
+}
+
+/* ─── ★ ここが高級感のミソ：内側の細いライン ─── */
+.navLink::before {
+  content: '';
+  position: absolute;
+  inset: 4px;                 /* 内側に4px入った位置に */
+  border: 0.5px solid #b8986a;
+  transition: all 0.4s ease;
+  pointer-events: none;
+}
+
+/* ─── ホバー：金色で塗りつぶす ─── */
+.navLink:hover {
+  background-color: #b8986a;
+  color: #0f0e0c;
+}
+
+.navLink:hover::before {
+  border-color: rgba(255, 245, 220, 0.45); /* 内線を白っぽく */
+}
+
+/* ─── アクティブページ（現在地）の強調 ─── */
+.navLinkActive {
+  border-color: #d4b483;
+  color: #d4b483;
+  font-weight: 400;
+}
+
+.navLinkActive::before {
+  border-width: 1px;         /* 内線を少し太く */
+  border-color: #d4b483;
+}
+
+.logoSubtitle {
+  font-size: 0.72rem;
+  font-weight: 300;           /* 細めのフォントで上品に */
+  letter-spacing: 0.35em;     /* 広めの字間で高級感 */ 
+
+  /* ─── ゴールドのグラデーション文字 ─── */
+  background: linear-gradient(
+    90deg,
+    #8a6a38 0%,
+    #d4a855 25%,
+    #f5e0a0 50%,  /* 中央だけ明るく光らせる */
+    #d4a855 75%,
+    #8a6a38 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  /* ─── 光が流れるアニメーション ─── */
+  animation: logoShine 3.5s linear infinite;
+
+  /* ─── 上に細いラインで区切り ─── */
+  border-top: 0.5px solid #5a4520;
+  padding-top: 5px;
+  margin-top: 3px;
+}
+
+@keyframes logoShine {
+  0%   { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+.logoTitle {
+  font-size: 2rem;            /* お好みで調整 */
+  font-weight: 800;           /* 太くして存在感を出す */
+  letter-spacing: 0.18em;     /* 字間を広げて格調アップ */
+
+  /* ─── 深みのあるゴールドグラデーション ─── */
+  background: linear-gradient(
+    160deg,
+    #6b4e1e 0%,
+    #b8986a 20%,
+    #f0d898 40%,
+    #fffbe8 50%,   /* 中心だけ白く輝かせる */
+    #f0d898 60%,
+    #b8986a 80%,
+    #6b4e1e 100%
+  );
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  /* ─── ゆっくり揺れる光のアニメーション ─── */
+  animation: logoTitleShine 4s ease-in-out infinite alternate;
+
+  /* ─── 疑似要素で下に金ラインを引く ─── */
+  position: relative;
+  display: inline-block;
+}
+
+/* 文字の下の装飾ライン */
+.logoTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 0.5px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #b8986a 30%,
+    #f0d898 50%,  /* 中央が一番明るい */
+    #b8986a 70%,
+    transparent
+  );
+}
+
+@keyframes logoTitleShine {
+  0%   { background-position: 0% center; }
+  100% { background-position: 100% center; }
+}
+
+
+
+
+
