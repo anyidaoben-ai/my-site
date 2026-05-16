@@ -139,6 +139,10 @@
   100% { background-position: 100% center; }
 }
 
+.logoImage {
+  border-radius: 50%; /* ← これだけで丸になる！ */
+  object-fit: cover;  /* ← 画像が歪まないようにする */
+}
 
 
 

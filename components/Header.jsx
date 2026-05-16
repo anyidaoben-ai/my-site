@@ -22,9 +22,9 @@ export default function Header() {
       {/* ── 右上：タブナビゲーション ────────── */}
       <nav>
        <ul className={styles.headtag}>
-        <li><a href="#home" className={`${styles.navLink} ${styles.navLinkActive}`}>Dispense</a></li>
-        <li><a href="#menu" className={styles.navLink}>お問い合わせ</a></li>
-        <li><a href="#paradise" className={styles.navLink}>予約する</a></li>
+        <li><a href="#home" className={`${styles.navLink} ${styles.navLinkActive}`}>Dispens</a></li>
+        <li><a href="#menu" className={styles.navLink}></a></li>
+        <li><a href="#paradise" className={styles.navLink}></a></li>
         <li><a href="#hisotory" className={styles.navLink}>楽しむ</a></li>
         </ul>
       </nav>
